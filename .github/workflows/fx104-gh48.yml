@@ -9,6 +9,7 @@ on:
     paths: ['fx104-gh48/**']
   workflow_dispatch:
     inputs:
+      REGION: {type: string, required: false, default: ''}
       environment: {type: string, default: fx104-gh48-test, required: false}
       helio_execution_id: {type: string, required: false, default: ''}
 permissions:
@@ -21,7 +22,7 @@ jobs:
       - run: echo "Owned pre-watermark fixture; no deployment"
       - name: Owned non-secret Helio variable witness
         env:
-          FX104_REGION_WITNESS: ${{ vars.REGION }}
+          FX104_REGION_WITNESS: ${{ inputs.REGION }}
           FX104_CATALOG_WITNESS: ${{ vars.HELIO_ENVIRONMENTS }}
         run: |
           printf 'REGION=%s\n' "$FX104_REGION_WITNESS"
