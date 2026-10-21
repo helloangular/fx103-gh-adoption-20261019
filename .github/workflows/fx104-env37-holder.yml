@@ -1,0 +1,17 @@
+name: fx104-env37-holder
+run-name: ${{ inputs.helio_execution_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      environment: {type: string, required: false, default: fx104-env37-holder}
+      helio_execution_id: {type: string, required: false, default: ''}
+permissions:
+  contents: read
+jobs:
+  fx104-hold:
+    runs-on: ubuntu-latest
+    environment: fx104-env37-holder
+    timeout-minutes: 10
+    steps:
+      - name: Owned application-only hold
+        run: echo "Synthetic held application, no catalog target reserved"; sleep 300
