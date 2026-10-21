@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: fx104-gh48-test
     steps:
-      - run: echo "Owned pre-watermark fixture; no deployment"; sleep 180
+      - run: echo "Owned pre-watermark fixture; no deployment"
