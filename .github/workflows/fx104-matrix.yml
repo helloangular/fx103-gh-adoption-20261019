@@ -3,7 +3,7 @@ run-name: ${{ inputs.helio_execution_id }}
 on:
   push:
     branches: [main]
-    paths: ['fx104-gh48/**']
+    paths: ['fx104-gh48-matrix/**']
   workflow_dispatch:
     inputs:
       environment:
