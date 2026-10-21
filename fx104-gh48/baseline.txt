@@ -1,0 +1,1 @@
+Owned real pre-watermark fixture run; timestamps are provider-assigned.

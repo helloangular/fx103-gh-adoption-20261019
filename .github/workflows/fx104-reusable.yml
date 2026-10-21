@@ -2,7 +2,8 @@ name: fx104-reusable
 run-name: ${{ inputs.helio_execution_id }}
 on:
   push:
-    branches: [fx104-gh48-main]
+    branches: [main]
+    paths: ['fx104-gh48/**']
   workflow_dispatch:
     inputs:
       environment:

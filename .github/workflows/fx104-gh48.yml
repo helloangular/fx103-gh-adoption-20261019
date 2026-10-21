@@ -1,0 +1,21 @@
+name: fx104-gh48
+run-name: ${{ inputs.helio_execution_id || github.run_id }}
+on:
+  push:
+    branches: [main, fx104-gh48-feature]
+    paths: ['fx104-gh48/**']
+  pull_request:
+    branches: [main]
+    paths: ['fx104-gh48/**']
+  workflow_dispatch:
+    inputs:
+      environment: {type: string, default: fx104-gh48-test, required: false}
+      helio_execution_id: {type: string, required: false, default: ''}
+permissions:
+  contents: read
+jobs:
+  fx104-probe:
+    runs-on: ubuntu-latest
+    environment: fx104-gh48-test
+    steps:
+      - run: echo "Owned fixture; no application deployment"

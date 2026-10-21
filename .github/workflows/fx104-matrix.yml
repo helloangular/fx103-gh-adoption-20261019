@@ -2,7 +2,8 @@ name: fx104-matrix
 run-name: ${{ inputs.helio_execution_id }}
 on:
   push:
-    branches: [fx104-gh48-main]
+    branches: [main]
+    paths: ['fx104-gh48/**']
   workflow_dispatch:
     inputs:
       environment:
@@ -21,5 +22,6 @@ jobs:
       matrix:
         item: [one, two]
     runs-on: ubuntu-latest
+    environment: fx104-gh48-test
     steps:
       - run: echo "Synthetic fixture only"
