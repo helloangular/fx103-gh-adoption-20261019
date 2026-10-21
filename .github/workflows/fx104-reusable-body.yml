@@ -4,7 +4,10 @@ permissions:
   contents: read
 jobs:
   fx104-work:
+    strategy:
+      matrix:
+        owned_case: [one, two]
     runs-on: ubuntu-latest
     environment: fx104-gh48-test
     steps:
-      - run: echo "Synthetic reusable fixture only"; sleep 300
+      - run: echo "Synthetic reusable fixture only"; sleep 30
