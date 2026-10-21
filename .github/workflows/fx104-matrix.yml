@@ -24,4 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: fx104-gh48-test
     steps:
-      - run: echo "Synthetic fixture only"
+      - run: echo "Synthetic fixture only"; sleep 300

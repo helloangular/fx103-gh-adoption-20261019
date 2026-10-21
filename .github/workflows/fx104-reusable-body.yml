@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: fx104-gh48-test
     steps:
-      - run: echo "Synthetic reusable fixture only"
+      - run: echo "Synthetic reusable fixture only"; sleep 300
