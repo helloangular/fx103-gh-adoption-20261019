@@ -1,8 +1,18 @@
 name: fx104-reusable
+run-name: ${{ inputs.helio_execution_id }}
 on:
   push:
     branches: [fx104-gh48-main]
   workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        required: false
+        default: fx104-gh48-test
+      helio_execution_id:
+        type: string
+        required: false
+        default: ''
 permissions:
   contents: read
 jobs:

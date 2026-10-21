@@ -1,9 +1,14 @@
 name: fx104-matrix
+run-name: ${{ inputs.helio_execution_id }}
 on:
   push:
     branches: [fx104-gh48-main]
   workflow_dispatch:
     inputs:
+      environment:
+        type: string
+        default: fx104-gh48-test
+        required: false
       helio_execution_id:
         type: string
         default: ''

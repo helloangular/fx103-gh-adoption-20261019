@@ -14,6 +14,11 @@ run-name: ${{ inputs.helio_execution_id }}
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        type: choice
+        required: false
+        default: fx104-hm-test
+        options: [fx104-hm-test, fx104-hm-production]
       helio_execution_id:
         type: string
         required: false
