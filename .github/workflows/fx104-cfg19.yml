@@ -1,0 +1,16 @@
+name: fx104-cfg19
+run-name: ${{ inputs.helio_execution_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      environment: {type: string, required: false, default: fx104-cfg19-production}
+      helio_execution_id: {type: string, required: false, default: ''}
+permissions:
+  contents: read
+  deployments: write
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    environment: fx104-cfg19-production
+    steps:
+      - run: echo "Owned CFG19 synthetic production fixture only"
