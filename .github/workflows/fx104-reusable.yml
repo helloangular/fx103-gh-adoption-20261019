@@ -1,18 +1,22 @@
 name: fx104-reusable
-run-name: ${{ inputs.helio_execution_id || github.run_id }}
+run-name: ${{ inputs.helio_execution_id }}
 on:
   push:
     branches: [main]
     paths: ['fx104-gh48-reusable/**']
   workflow_dispatch:
     inputs:
-      helio_execution_id: {type: string, required: false, default: ''}
-      environment: {type: string, required: false, default: fx104-gh48-test}
+      environment:
+        type: choice
+        options: [fx104-gh48-test]
+        required: false
+        default: fx104-gh48-test
+      helio_execution_id:
+        type: string
+        required: false
+        default: ''
 permissions:
   contents: read
 jobs:
-  fx104-bootstrap:
-    runs-on: ubuntu-latest
-    environment: fx104-gh48-test
-    steps:
-      - run: echo "Owned canonical bootstrap before unsupported reusable update"
+  fx104-call:
+    uses: ./.github/workflows/fx104-reusable-body.yml
