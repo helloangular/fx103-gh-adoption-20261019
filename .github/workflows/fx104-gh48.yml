@@ -19,3 +19,10 @@ jobs:
     environment: fx104-gh48-test
     steps:
       - run: echo "Owned pre-watermark fixture; no deployment"
+      - name: Owned non-secret Helio variable witness
+        env:
+          FX104_REGION_WITNESS: ${{ vars.REGION }}
+          FX104_CATALOG_WITNESS: ${{ vars.HELIO_ENVIRONMENTS }}
+        run: |
+          printf 'REGION=%s\n' "$FX104_REGION_WITNESS"
+          printf 'HELIO_ENVIRONMENTS=%s\n' "$FX104_CATALOG_WITNESS"
