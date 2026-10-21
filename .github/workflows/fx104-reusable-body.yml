@@ -1,0 +1,9 @@
+name: fx104-reusable-body
+on: workflow_call
+permissions:
+  contents: read
+jobs:
+  fx104-work:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Synthetic reusable fixture only"

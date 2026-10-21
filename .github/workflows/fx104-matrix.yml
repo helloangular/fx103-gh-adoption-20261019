@@ -1,0 +1,20 @@
+name: fx104-matrix
+on:
+  push:
+    branches: [fx104-gh48-main]
+  workflow_dispatch:
+    inputs:
+      helio_execution_id:
+        type: string
+        default: ''
+        required: false
+permissions:
+  contents: read
+jobs:
+  fx104-matrix:
+    strategy:
+      matrix:
+        item: [one, two]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Synthetic fixture only"

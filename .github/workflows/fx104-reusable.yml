@@ -1,0 +1,10 @@
+name: fx104-reusable
+on:
+  push:
+    branches: [fx104-gh48-main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fx104-call:
+    uses: ./.github/workflows/fx104-reusable-body.yml
